@@ -1,9 +1,11 @@
-m=75;
-g=9.81;
-I=5;
-R=1.25;
-v0=44;
+m=75;   % mass of vehicle
+g=9.81; % gravitational constant
+I=5;    % moment of inertia
+R=1.25; % radius of wheel
+v0=44;  % initial vehicle speed
+
 sim("ABS_system.slx");
-model = 'ABS_system';
-open_system(model);
-open_system("ABS_system/Scope");
+open_system("ABS_system");
+open_system("ABS_system/Wheel&VehicleSpeed");
+open_system("ABS_system/VehicleSlip");
+open_system("ABS_system/StoppingDistance");
